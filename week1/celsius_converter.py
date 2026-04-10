@@ -9,7 +9,13 @@ def celsius_to_fahrenheit(temp: float):
 
 def main(temp: float):
     f_temp = celsius_to_fahrenheit(temp)
-    print(f"{temp} Celsius -> {f_temp} Fahrenheit")
+    print(f"{temp} Celsius -> {f_temp:.2f} Fahrenheit")
 
 if __name__ == "__main__":
-    main(float(sys.argv[1]))
+    if len(sys.argv) == 2:
+        try:
+            main(float(sys.argv[1]))
+        except ValueError:
+            print("Please ensure the input is a number")
+    else:
+        print("Usage: python celsius_converter.py <temperature in celsius>")
