@@ -8,11 +8,7 @@ def is_even(num: int):
     return num % 2 == 0
 
 def main(nums: list):
-    evens = []
-    for n in nums:
-        if is_even(n):
-            evens.append(n)
-    return evens
+    return [n for n in nums if is_even(n)]
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
@@ -22,4 +18,4 @@ if __name__ == "__main__":
         except ValueError:
             print("Please ensure all inputs are integers.")
     else:
-        print("Usage: python script.py <list of numbers>")
+        print("Usage: python even_numbers.py <list of numbers>")
