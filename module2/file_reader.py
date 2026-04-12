@@ -49,10 +49,12 @@ def main():
             print_file_lines()
         elif user_choice == 2:
             append_to_file()
+        elif user_choice == 3:
+            print("Goodbye!")
+            return
         else:
             print("Please enter a valid entry (ie. 1)")
 
-    print("Goodbye!")
 
 if __name__ == "__main__":
     main()
