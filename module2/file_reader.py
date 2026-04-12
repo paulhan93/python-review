@@ -9,21 +9,22 @@ from pathlib import Path
 def print_file_lines():
     print("[INFO] Printing contents of 'notes.txt' file...")
     try:
-        notes_path = Path.cwd() / Path('notes.txt')
+        notes_path = Path.cwd() / 'notes.txt'
         with open(notes_path, encoding='UTF-8') as f:
             lines = f.readlines()
         line_count = len(lines)
         # Print each line number and content
-        for i in range(0, line_count):
+        for i in range(line_count):
             print(f"[{i+1:03d}]:", lines[i], end="")
     except FileNotFoundError:
         print(f"The 'notes.txt' file does not exist in the current directory")
 
 def append_to_file():
     text = input("Enter text to append: ")
-    notes_path = Path.cwd() / Path('notes.txt')
+    notes_path = Path.cwd() / 'notes.txt'
     with open(notes_path, 'a', encoding='UTF-8') as f:
         f.write(text + '\n')
+    print("[INFO] Note has been saved!")
 
 def main():
     # Welcome message & menu
